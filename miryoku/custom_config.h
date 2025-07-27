@@ -4,7 +4,7 @@
 // Custom 4-layer layout: BASE, CURSOR, SYMBOL, NUMBER
 // For 6-column Corne (42 keys total)
 
-// LAYER DEFINITIONS
+// LAYER DEFINITIONS - These define the actual key layouts
 
 // BASE LAYER - QWERTY with homerow mods and layer access
 #define MIRYOKU_LAYER_BASE \
@@ -41,19 +41,13 @@ MIRYOKU_X(CURSOR,  "Cursor") \
 MIRYOKU_X(SYMBOL,  "Symbol") \
 MIRYOKU_X(NUMBER,  "Number")
 
-// LAYER NUMBERS - Required for ZMK
-#define MIRYOKU_LAYER_BASE 0
-#define MIRYOKU_LAYER_CURSOR 1
-#define MIRYOKU_LAYER_SYMBOL 2
-#define MIRYOKU_LAYER_NUMBER 3
+// Layer aliases for shorter references (used in layer-tap keys)
+#define U_BASE   0
+#define U_CURSOR 1
+#define U_SYMBOL 2
+#define U_NUMBER 3
 
-// Layer aliases for shorter references
-#define U_BASE   MIRYOKU_LAYER_BASE
-#define U_CURSOR MIRYOKU_LAYER_CURSOR
-#define U_SYMBOL MIRYOKU_LAYER_SYMBOL
-#define U_NUMBER MIRYOKU_LAYER_NUMBER
-
-// MAPPING - Use all 42 keys of 6-column Corne
+// MAPPING - Transform the 42-key layout to Corne's physical layout
 #define MIRYOKU_LAYOUTMAPPING_CORNE( \
 K00, K01, K02, K03, K04, K05,       K06, K07, K08, K09, K10, K11, \
 K12, K13, K14, K15, K16, K17,       K18, K19, K20, K21, K22, K23, \
@@ -69,7 +63,7 @@ K24, K25, K26, K27, K28, K29,       K30, K31, K32, K33, K34, K35, \
 //
 // BASE LAYER:
 // [TAB] [Q] [W] [E] [R] [T]       [Y] [U] [I] [O] [P] [\]
-// [CAPS] [GUI/A] [CTRL/S] [ALT/D] [SHFT/F] [G]   [H] [SHFT/J] [ALT/K] [CTRL/L] [GUI/;] [PGUP]
+// [CAPS] [GUI/A] [ALT/S] [CTRL/D] [SHFT/F] [G]   [H] [SHFT/J] [CTRL/K] [ALT/L] [GUI/;] [PGUP]
 // [SHFT] [Z] [X] [C] [V] [B]      [N] [M] [,] [.] [/] [PGDN]
 //           [ESC] [NUM/DEL] [CURSOR/BSPC]   [SYMBOL/SPC] [RET] [GUI+SPC]
 //
@@ -85,5 +79,5 @@ K24, K25, K26, K27, K28, K29,       K30, K31, K32, K33, K34, K35, \
 // NOTES:
 // - All layers use &none for unused keys
 // - Layer controlling keys use &trans when on their own layer
-// - Homerow mods: GUI/ALT/CTRL/SHIFT on ASDF and JKL;
+// - Homerow mods: GUI/ALT/CTRL/SHIFT on ASDF and JKLH (mirrored)
 // - CAPS WORD on base layer left outer home position
