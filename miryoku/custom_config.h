@@ -41,23 +41,21 @@ MIRYOKU_X(CURSOR,  "Cursor") \
 MIRYOKU_X(SYMBOL,  "Symbol") \
 MIRYOKU_X(NUMBER,  "Number")
 
+// Layer number definitions for ZMK
+#define MIRYOKU_LAYER_BASE 0
+#define MIRYOKU_LAYER_CURSOR 1
+#define MIRYOKU_LAYER_SYMBOL 2
+#define MIRYOKU_LAYER_NUMBER 3
+
 // Layer aliases for shorter references (used in layer-tap keys)
 #define U_BASE   0
 #define U_CURSOR 1
 #define U_SYMBOL 2
 #define U_NUMBER 3
 
-// MAPPING - Transform the 42-key layout to Corne's physical layout
-#define MIRYOKU_LAYOUTMAPPING_CORNE( \
-K00, K01, K02, K03, K04, K05,       K06, K07, K08, K09, K10, K11, \
-K12, K13, K14, K15, K16, K17,       K18, K19, K20, K21, K22, K23, \
-K24, K25, K26, K27, K28, K29,       K30, K31, K32, K33, K34, K35, \
-               K36, K37, K38,       K39, K40, K41 \
-) \
-K00, K01, K02, K03, K04, K05,       K06, K07, K08, K09, K10, K11, \
-K12, K13, K14, K15, K16, K17,       K18, K19, K20, K21, K22, K23, \
-K24, K25, K26, K27, K28, K29,       K30, K31, K32, K33, K34, K35, \
-                    K36, K37, K38,       K39, K40, K41
+// MAPPING - Use the default Corne mapping (Miryoku already supports 6-column Corne)
+// The 6-column Corne uses the same mapping as 5-column, with extra keys available
+// No custom MIRYOKU_LAYOUTMAPPING_CORNE needed - Miryoku handles this internally
 
 // LAYOUT EXPLANATION:
 //
@@ -81,3 +79,4 @@ K24, K25, K26, K27, K28, K29,       K30, K31, K32, K33, K34, K35, \
 // - Layer controlling keys use &trans when on their own layer
 // - Homerow mods: GUI/ALT/CTRL/SHIFT on ASDF and JKLH (mirrored)
 // - CAPS WORD on base layer left outer home position
+// - Extra columns (TAB, \, CAPS, PGUP, SHFT, PGDN) utilize the 6th column on Corne
