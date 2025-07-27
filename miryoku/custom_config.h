@@ -9,7 +9,7 @@
 // BASE LAYER - QWERTY with homerow mods and layer access
 #define MIRYOKU_LAYER_BASE \
 &kp TAB,       &kp Q,         &kp W,         &kp E,         &kp R,         &kp T,         &kp Y,         &kp U,         &kp I,         &kp O,         &kp P,         &kp BSLH, \
-&caps_word,    &mt LGUI A,    &mt LCTRL S,   &mt LALT D,    &mt LSHFT F,   &kp G,         &kp H,         &mt RGUI J,    &mt RALT K,    &mt RCTRL L,   &mt RSHFT SCLN, &kp PG_UP, \
+&caps_word,    &mt LGUI A,    &mt LALT S,    &mt LCTRL D,   &mt LSHFT F,   &kp G,         &kp H,         &mt RSHFT J,   &mt RCTRL K,   &mt RALT L,    &mt RGUI SEMI, &kp PG_UP, \
 &kp LSHFT,     &kp Z,         &kp X,         &kp C,         &kp V,         &kp B,         &kp N,         &kp M,         &kp COMMA,     &kp DOT,       &kp SLASH,     &kp PG_DN, \
                                              &kp ESC,       &lt U_NUMBER DEL, &lt U_CURSOR BSPC, &lt U_SYMBOL SPACE, &kp RET,    &kp LG(SPACE)
 
@@ -47,25 +47,29 @@ MIRYOKU_X(NUMBER,  "Number")
 #define MIRYOKU_LAYER_SYMBOL 2
 #define MIRYOKU_LAYER_NUMBER 3
 
+// Layer aliases for shorter references
+#define U_BASE   MIRYOKU_LAYER_BASE
+#define U_CURSOR MIRYOKU_LAYER_CURSOR
+#define U_SYMBOL MIRYOKU_LAYER_SYMBOL
+#define U_NUMBER MIRYOKU_LAYER_NUMBER
+
 // MAPPING - Use all 42 keys of 6-column Corne
-#if defined (MIRYOKU_KEYBOARD_CORNE) || !defined (MIRYOKU_KEYBOARD_CORNE)
 #define MIRYOKU_LAYOUTMAPPING_CORNE( \
 K00, K01, K02, K03, K04, K05,       K06, K07, K08, K09, K10, K11, \
 K12, K13, K14, K15, K16, K17,       K18, K19, K20, K21, K22, K23, \
 K24, K25, K26, K27, K28, K29,       K30, K31, K32, K33, K34, K35, \
-N36, N37, K38, K39, K40, N41,       N42, K43, K44, K45, N46, N47 \
+               K36, K37, K38,       K39, K40, K41 \
 ) \
-K00, K01, K02, K03, K04, K05,       K06, K07, K08, K09, K10, K11, \
-K12, K13, K14, K15, K16, K17,       K18, K19, K20, K21, K22, K23, \
-K24, K25, K26, K27, K28, K29,       K30, K31, K32, K33, K34, K35, \
-          K38, K39, K40,                 K43, K44, K45
-#endif
+K00  K01  K02  K03  K04  K05        K06  K07  K08  K09  K10  K11 \
+K12  K13  K14  K15  K16  K17        K18  K19  K20  K21  K22  K23 \
+K24  K25  K26  K27  K28  K29        K30  K31  K32  K33  K34  K35 \
+                    K36  K37  K38        K39  K40  K41
 
 // LAYOUT EXPLANATION:
 //
 // BASE LAYER:
 // [TAB] [Q] [W] [E] [R] [T]       [Y] [U] [I] [O] [P] [\]
-// [CAPS] [GUI/A] [CTRL/S] [ALT/D] [SHFT/F] [G]   [H] [GUI/J] [ALT/K] [CTRL/L] [SHFT/;] [PGUP]
+// [CAPS] [GUI/A] [CTRL/S] [ALT/D] [SHFT/F] [G]   [H] [SHFT/J] [ALT/K] [CTRL/L] [GUI/;] [PGUP]
 // [SHFT] [Z] [X] [C] [V] [B]      [N] [M] [,] [.] [/] [PGDN]
 //           [ESC] [NUM/DEL] [CURSOR/BSPC]   [SYMBOL/SPC] [RET] [GUI+SPC]
 //
